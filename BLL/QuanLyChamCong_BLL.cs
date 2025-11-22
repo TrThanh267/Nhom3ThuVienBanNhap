@@ -1,0 +1,53 @@
+﻿using Microsoft.EntityFrameworkCore.Query;
+using Nhom3ThuVienBanNhap.DAL;
+using Nhom3ThuVienBanNhap.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Nhom3ThuVienBanNhap.BLL
+{
+    internal class QuanLyChamCong_BLL
+    {
+        private QuanLyChamCong_DAL chamCong_DAL = new QuanLyChamCong_DAL();
+        public List<DTO.QuanLyChamCong_DTO> GetListChamCong()
+        {
+            return chamCong_DAL.GetListChamCong();
+        }
+        public bool ThemChamCong(ChamCong chamCong)
+        {
+            if(chamCong_DAL.KiemTraChamCongTonTai(chamCong.MaNhanVien.Value))
+            {
+                MessageBox.Show("Nhân viên này đã được chấm công trong ngày hôm nay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else if (!chamCong_DAL.KiemTraChamCongVoiNhanVien(chamCong.MaNhanVien.Value))
+            {
+                MessageBox.Show("Chỉ có nhân viên mới có thể chấm công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else
+            {
+                return chamCong_DAL.ThemChamCong(chamCong);
+            }
+        }
+        public NhanVien layThongTinNhanVienQuaTaiKhoan(int maTaiKhoan)
+        {
+            return chamCong_DAL.LayThongTinNhanVienQuaTaiKhoan(maTaiKhoan);
+        }
+        public List<NhanVien> GetNhanViens()
+        {
+            return chamCong_DAL.GetListNhanVien();
+        }
+        public List<CaLam> GetCaLams()
+        {
+            return chamCong_DAL.GetListCaLam();
+        }
+        public List<LoaiCong> GetLoaiCong()
+        {
+            return chamCong_DAL.GetListLoaiCong();
+        }
+    }
+}
