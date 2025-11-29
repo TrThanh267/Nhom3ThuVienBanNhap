@@ -316,7 +316,7 @@ namespace QuanLyThuVienNhom3.GUI.UC
                     MessageBox.Show("Ngày sinh không hợp lệ! Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (DiaChi.Length < 10 || DiaChi.Length > 100)
+                if (DiaChi.Length < 3)
                 {
                     MessageBox.Show("Địa chỉ phải từ 10 đến 100 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;

@@ -19,6 +19,8 @@ public partial class PhieuMuon
 
     public int? MaDocGia { get; set; }
 
+    public int? SoLuongBanDau { get; set; }
+
     public virtual ICollection<ChiTietPhieuMuon> ChiTietPhieuMuons { get; set; } = new List<ChiTietPhieuMuon>();
 
     public virtual DocGium? MaDocGiaNavigation { get; set; }

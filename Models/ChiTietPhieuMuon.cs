@@ -15,6 +15,8 @@ public partial class ChiTietPhieuMuon
 
     public int? MaPhieuMuon { get; set; }
 
+    public bool? DaGhiNhanTra { get; set; }
+
     public virtual PhieuMuon? MaPhieuMuonNavigation { get; set; }
 
     public virtual Sach? MaSachNavigation { get; set; }

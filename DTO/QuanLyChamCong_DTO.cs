@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Nhom3ThuVienBanNhap.DTO
 {
-    internal class QuanLyChamCong_DTO
+    public class QuanLyChamCong_DTO
     {
         public int STT { get; set; }
         [DisplayName("Mã Chấm Công")]
@@ -33,5 +33,6 @@ namespace Nhom3ThuVienBanNhap.DTO
         public string? CaLam { get; set; }
         [DisplayName("Nhân Viên")]
         public string? NhanVien { get; set; }
+        public int? MaNhanVien { get; set; }
     }
 }

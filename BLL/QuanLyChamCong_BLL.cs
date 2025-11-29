@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 using Nhom3ThuVienBanNhap.DAL;
+using Nhom3ThuVienBanNhap.DTO;
 using Nhom3ThuVienBanNhap.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,10 @@ namespace Nhom3ThuVienBanNhap.BLL
                 return chamCong_DAL.ThemChamCong(chamCong);
             }
         }
+        public bool CapNhapChamCong(ChamCong chamCong)
+        {
+            return chamCong_DAL.CapNhapChamCong(chamCong);
+        }
         public NhanVien layThongTinNhanVienQuaTaiKhoan(int maTaiKhoan)
         {
             return chamCong_DAL.LayThongTinNhanVienQuaTaiKhoan(maTaiKhoan);
@@ -48,6 +53,30 @@ namespace Nhom3ThuVienBanNhap.BLL
         public List<LoaiCong> GetLoaiCong()
         {
             return chamCong_DAL.GetListLoaiCong();
+        }
+        public List<QuanLyChamCong_DTO> LocChamCong(int ngay,int thang,int nam)
+        {
+            return chamCong_DAL.LocChamCong(ngay,thang,nam);
+        }
+        public int KiemTraLamChinh(int thang, int nam, int idnv)
+        {
+            return chamCong_DAL.KiemTraNgayCongLamChinh(thang,nam,idnv);
+        }
+        public int KiemTraLamThem(int thang, int nam, int idnv)
+        {
+            return chamCong_DAL.KiemTraNgayCongLamNgoaiGio(thang, nam, idnv);
+        }
+        public int KiemTraLamNgayLe(int thang, int nam, int idnv)
+        {
+            return chamCong_DAL.KiemTraNgayCongLamNgaayLe(thang, nam, idnv);
+        }
+        public List<QuanLyChamCong_DTO> TimKiem(string tukhoa)
+        {
+            return chamCong_DAL.TimKiem(tukhoa);
+        }
+        public void XoaCC(int chamCong)
+        {
+            chamCong_DAL.XoaChamCong(chamCong);
         }
     }
 }

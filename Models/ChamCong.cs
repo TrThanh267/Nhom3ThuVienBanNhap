@@ -5,7 +5,7 @@ namespace Nhom3ThuVienBanNhap.Models;
 
 public partial class ChamCong
 {
-    public int? MaChamCong { get; set; }
+    public int MaChamCong { get; set; }
 
     public int? NgayLam { get; set; }
 

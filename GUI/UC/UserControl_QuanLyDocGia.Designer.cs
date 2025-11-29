@@ -602,7 +602,7 @@
             GroupBox_NhapThongTinDocGia.CustomizableEdges = customizableEdges43;
             GroupBox_NhapThongTinDocGia.Font = new Font("Segoe UI", 9F);
             GroupBox_NhapThongTinDocGia.ForeColor = Color.White;
-            GroupBox_NhapThongTinDocGia.Location = new Point(210, 120);
+            GroupBox_NhapThongTinDocGia.Location = new Point(210, 119);
             GroupBox_NhapThongTinDocGia.Name = "GroupBox_NhapThongTinDocGia";
             GroupBox_NhapThongTinDocGia.ShadowDecoration.CustomizableEdges = customizableEdges44;
             GroupBox_NhapThongTinDocGia.Size = new Size(699, 608);

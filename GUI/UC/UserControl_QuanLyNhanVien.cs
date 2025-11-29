@@ -34,7 +34,16 @@ namespace QuanLyThuVienNhom3.GUI.UC
         }
         public void loadComboBoxTk()
         {
-            ComboBox_TaiKhoan.DataSource = _QuanLyNhanVien_BLL.TaiKhoanNhanVien();
+            var danhSachTK = _QuanLyNhanVien_BLL.TaiKhoanNhanVien()?.ToList();
+
+            if (danhSachTK == null || !danhSachTK.Any())
+            {
+                MessageBox.Show("Không có tài khoản nhân viên nào đang hoạt động!");
+                return;
+            }
+
+            danhSachTK.Insert(0, new TaiKhoan { MaTaiKhoan = 0, TenTaiKhoan = "--Chọn tài khoản--" });
+            ComboBox_TaiKhoan.DataSource = danhSachTK;
             ComboBox_TaiKhoan.DisplayMember = "TenTaiKhoan";
             ComboBox_TaiKhoan.ValueMember = "MaTaiKhoan";
         }
